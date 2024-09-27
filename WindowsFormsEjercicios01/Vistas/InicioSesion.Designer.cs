@@ -114,20 +114,41 @@ namespace WindowsFormsEjercicios01
 
         private void SendButton_Click(object sender, EventArgs e)
         {
-            Boolean success = UserClass.usernameMatch(userInputBox.Text, passwdInputBox.Text, DataUsers.userlist);
 
-            if (success)
-            {
-                MessageBox.Show("Bienvenido " + userInputBox.Text);
-            } else { 
-                MessageBox.Show("Error");
+            if (AreInputFieldsPopulated(userInputBox, passwdInputBox)) {
+
+                Boolean success = UserClass.usernameMatch(userInputBox.Text, passwdInputBox.Text, DataUsers.userlist);
+
+                if (success)
+                {
+                    MessageBox.Show("Bienvenido " + userInputBox.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
             };
         }
 
         private void NewUser_Click(object sender, EventArgs e)
         {
-            DataUsers.addUserClass(DataUsers.userlist, userInputBox.Text, passwdInputBox.Text);
-            MessageBox.Show("Nuevo usuario añadido: " + userInputBox.Text);
+            if (AreInputFieldsPopulated(userInputBox, passwdInputBox))
+            {
+
+                DataUsers.addUserClass(DataUsers.userlist, userInputBox.Text, passwdInputBox.Text);
+                MessageBox.Show("Nuevo usuario añadido: " + userInputBox.Text);
+
+            }
+        }
+
+        private Boolean AreInputFieldsPopulated(TextBox tbun, TextBox tbpwd)
+        {
+            if (tbun.Text != "" && tbpwd.Text != "")
+            {
+                return true;
+            }
+            MessageBox.Show("Empty Field");
+            return false;
         }
         #endregion
 
