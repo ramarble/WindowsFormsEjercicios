@@ -1,4 +1,5 @@
-﻿using WindowsFormsEjercicios01.Modelos;
+﻿using WindowsFormsEjercicios01.Controladores;
+using WindowsFormsEjercicios01.Modelos;
 
 namespace WindowsFormsEjercicios01
 {
@@ -35,7 +36,7 @@ namespace WindowsFormsEjercicios01
             userInputBox = new TextBox();
             passwdInputBox = new TextBox();
             sendButton = new Button();
-            clearButton = new Button();
+            InsertNewUserButton = new Button();
             SuspendLayout();
             // 
             // labelUsername
@@ -79,23 +80,24 @@ namespace WindowsFormsEjercicios01
             sendButton.TabIndex = 4;
             sendButton.Text = "Log In";
             sendButton.UseVisualStyleBackColor = true;
-            sendButton.Click += new EventHandler(SendButton_Click);
+            sendButton.Click += SendButton_Click;
             // 
             // clearButton
             // 
-            clearButton.Location = new Point(250, 200);
-            clearButton.Name = "clearButton";
-            clearButton.Size = new Size(75, 23);
-            clearButton.TabIndex = 5;
-            clearButton.Text = "Clear";
-            clearButton.UseVisualStyleBackColor = true;
+            InsertNewUserButton.Location = new Point(250, 200);
+            InsertNewUserButton.Name = "clearButton";
+            InsertNewUserButton.Size = new Size(75, 23);
+            InsertNewUserButton.TabIndex = 5;
+            InsertNewUserButton.Text = "Clear";
+            InsertNewUserButton.UseVisualStyleBackColor = true;
+            InsertNewUserButton.Click += this.NewUser_Click;
             // 
             // InicioSesion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 261);
-            Controls.Add(clearButton);
+            Controls.Add(InsertNewUserButton);
             Controls.Add(labelPassword);
             Controls.Add(sendButton);
             Controls.Add(passwdInputBox);
@@ -105,23 +107,28 @@ namespace WindowsFormsEjercicios01
             MinimizeBox = false;
             Name = "InicioSesion";
             Text = "Formulario de Inicio de Sesión";
+            Load += InicioSesion_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         private void SendButton_Click(object sender, EventArgs e)
         {
-            //out :)
-            Boolean success = UserClass.usernameMatch(userInputBox.Text, passwdInputBox.Text);
+            Boolean success = UserClass.usernameMatch(userInputBox.Text, passwdInputBox.Text, DataUsers.userlist);
 
             if (success)
             {
-                MessageBox.Show("Success");
+                MessageBox.Show("Bienvenido " + userInputBox.Text);
             } else { 
-                MessageBox.Show("Failure");
+                MessageBox.Show("Error");
             };
         }
 
+        private void NewUser_Click(object sender, EventArgs e)
+        {
+            DataUsers.addUserClass(DataUsers.userlist, userInputBox.Text, passwdInputBox.Text);
+            MessageBox.Show("Nuevo usuario añadido: " + userInputBox.Text);
+        }
         #endregion
 
         private Label labelUsername;
@@ -129,6 +136,6 @@ namespace WindowsFormsEjercicios01
         private TextBox userInputBox;
         private TextBox passwdInputBox;
         private Button sendButton;
-        private Button clearButton;
+        private Button InsertNewUserButton;
     }
 }

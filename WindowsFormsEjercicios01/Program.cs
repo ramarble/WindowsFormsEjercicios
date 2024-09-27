@@ -1,3 +1,4 @@
+using WindowsFormsEjercicios01.Controladores;
 using WindowsFormsEjercicios01.Modelos;
 
 namespace WindowsFormsEjercicios01
@@ -9,14 +10,18 @@ namespace WindowsFormsEjercicios01
         /// </summary>
         [STAThread]
 
+
         static void Main()
         {
-            UserClass.populateUserlist();
-            MessageBox.Show(UserClass.getUserList().First().getName());
-            MessageBox.Show(UserClass.getUserList().First().getPassword());
+
+
+            //debugs
+            //MessageBox.Show(UserClass.getUserList().First().getName());
+            //MessageBox.Show(UserClass.getUserList().First().getPassword());
+
             ApplicationConfiguration.Initialize();
             Application.Run(new InicioSesion());
-        
+
         }
 
 
