@@ -1,4 +1,6 @@
-﻿namespace Ejercicio2._1
+﻿using System.Runtime.CompilerServices;
+
+namespace Ejercicio2._1
 {
     partial class EventPlanner
     {
@@ -29,6 +31,7 @@
         private void InitializeComponent()
         {
             this.containerPanel = new System.Windows.Forms.Panel();
+            this.sendButton = new System.Windows.Forms.Button();
             this.fullDayEventCheck = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -47,6 +50,7 @@
             // 
             // containerPanel
             // 
+            this.containerPanel.Controls.Add(this.sendButton);
             this.containerPanel.Controls.Add(this.fullDayEventCheck);
             this.containerPanel.Controls.Add(this.dateTimePicker1);
             this.containerPanel.Controls.Add(this.comboBox1);
@@ -56,6 +60,16 @@
             this.containerPanel.Name = "containerPanel";
             this.containerPanel.Size = new System.Drawing.Size(360, 322);
             this.containerPanel.TabIndex = 0;
+            // 
+            // sendButton
+            // 
+            this.sendButton.Location = new System.Drawing.Point(280, 293);
+            this.sendButton.Name = "sendButton";
+            this.sendButton.Size = new System.Drawing.Size(75, 23);
+            this.sendButton.TabIndex = 7;
+            this.sendButton.Text = "Enviar";
+            this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.Click += new System.EventHandler(this.sendButton_click);
             // 
             // fullDayEventCheck
             // 
@@ -85,6 +99,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Boda",
@@ -121,7 +137,6 @@
             // 
             // summaryLabel
             // 
-            this.summaryLabel.AutoSize = false;
             this.summaryLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.summaryLabel.Location = new System.Drawing.Point(0, 0);
             this.summaryLabel.Name = "summaryLabel";
@@ -177,12 +192,12 @@
             this.ClientSize = new System.Drawing.Size(384, 361);
             this.Controls.Add(this.containerPanel);
             this.Controls.Add(this.menuStrip);
+            this.MaximizeBox = false;
             this.Name = "EventPlanner";
             this.Text = "Event Planner";
             this.containerPanel.ResumeLayout(false);
             this.containerPanel.PerformLayout();
             this.summaryPanel.ResumeLayout(false);
-            this.summaryPanel.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -204,6 +219,7 @@
         private System.Windows.Forms.CheckBox fullDayEventCheck;
         private System.Windows.Forms.Panel summaryPanel;
         private System.Windows.Forms.Label summaryLabel;
+        private System.Windows.Forms.Button sendButton;
     }
 }
 
