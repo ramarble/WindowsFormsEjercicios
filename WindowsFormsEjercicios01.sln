@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2.1", "Ejercicio2.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioEnvioPaquetes", "Ejercicio04\EjercicioEnvioPaquetes.csproj", "{D8008026-2712-4034-BA86-F1E7A820C983}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioPersonalizacionTexto", "EjercicioPersonalizacionTexto\EjercicioPersonalizacionTexto.csproj", "{AFD30E3F-C857-41D7-B04E-2E43812962BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D8008026-2712-4034-BA86-F1E7A820C983}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8008026-2712-4034-BA86-F1E7A820C983}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8008026-2712-4034-BA86-F1E7A820C983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD30E3F-C857-41D7-B04E-2E43812962BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD30E3F-C857-41D7-B04E-2E43812962BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD30E3F-C857-41D7-B04E-2E43812962BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD30E3F-C857-41D7-B04E-2E43812962BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
