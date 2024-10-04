@@ -142,7 +142,7 @@ namespace Ejercicio2._1
             this.summaryLabel.Name = "summaryLabel";
             this.summaryLabel.Size = new System.Drawing.Size(360, 129);
             this.summaryLabel.TabIndex = 0;
-            this.summaryLabel.Text = "Sumario: FALTA POR HACER ESTO";
+            this.summaryLabel.Text = "Sumario:";
             // 
             // menuStrip
             // 
